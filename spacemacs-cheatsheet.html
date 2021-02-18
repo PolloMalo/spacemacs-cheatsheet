@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Spacemacs Cheatsheet</title>
+        <meta charset="utf-8">
+
+        <style>
+         body {
+             background-color: #FFF;
+             font-size: xx-small;
+         }
+         .row {
+             display: flex;
+             flex-direction: row;
+         }
+         .col-6 {
+             margin: 0.5rem;
+             width: 50%;
+         }
+         table {
+             width: 100%;
+             margin-bottom: 1rem;
+             border: 1px solid #CCC;
+         }
+         table th {
+             text-align: left;
+             font-size: x-small;
+         }
+         table td {
+             padding-left: 0.5rem;
+         }
+         table td:first-child {
+             width: 30%;
+         }
+         table td:nth-child(2) {
+             width: 70%;
+         }
+         table tbody tr:nth-child(odd) {
+             background: #CCC;
+         }
+        </style>
+
+    </head>
+    <body>
+        <h1>Spacemacs Cheatsheet</h1>
+        <p>Modified February 16, 2021</p>
+
+        <h2>Common</h2>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+        <table id="exit">
+            <thead>
+                <tr>
+                    <th colspan="2">Exit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>:wqa ENTER</td>
+                    <td>save and exit</td>
+                </tr>
+                <tr>
+                    <td>:qa!</td>
+                    <td>exit without saving</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="move">
+            <thead>
+                <tr>
+                    <th colspan="2">Move</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>h</td>
+                    <td>left</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td>right</td>
+                </tr>
+                <tr>
+                    <td>k</td>
+                    <td>up</td>
+                </tr>
+                <tr>
+                    <td>j</td>
+                    <td>down</td>
+                </tr>
+                <tr>
+                    <td>w</td>
+                    <td>next word</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td>end of word</td>
+                </tr>
+                <tr>
+                    <td>$</td>
+                    <td>end of line</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>start of line</td>
+                </tr>
+                <tr>
+                    <td>gg</td>
+                    <td>end of buffer</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>start of buffer</td>
+                </tr>
+                <tr>
+                    <td>:{line number}</td>
+                    <td>go to line</td>
+                </tr>
+                <tr>
+                    <td>spc w j</td>
+                    <td>window below</td>
+                </tr>
+                <tr>
+                    <td>spc w k</td>
+                    <td>window above</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="select">
+            <thead>
+                <tr>
+                    <th colspan="2">Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>v</td>
+                    <td>visual select</td>
+                </tr>
+                <tr>
+                    <td>V</td>
+                    <td>visual line select</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="delete">
+            <thead>
+                <tr>
+                    <th colspan="2">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>x</td>
+                    <td>delete at cursor</td>
+                </tr>
+                <tr>
+                    <td>[n] de</td>
+                    <td>delete to end of word</td>
+                </tr>
+                <tr>
+                    <td>[n] dw</td>
+                    <td>delete to end of word and trailing space</td>
+                </tr>
+                <tr>
+                    <td>[n] d$</td>
+                    <td>delete to end of line</td>
+                </tr>
+                <tr>
+                    <td>[n] dd</td>
+                    <td>delete line</td>
+                </tr>
+                <tr>
+                    <td>[n] cw</td>
+                    <td>delete to end of word, then edit</td>
+                </tr>
+                <tr>
+                    <td>[n] c$</td>
+                    <td>delete to end of line, then edit</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>delete visual selection</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="copy">
+            <thead>
+                <tr>
+                    <th colspan="2">Copy (Yank)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>yw</td>
+                    <td>copy word under cursor</td>
+                </tr>
+                <tr>
+                    <td>yy</td>
+                    <td>copy line under cursor</td>
+                </tr>
+                <tr>
+                    <td>y</td>
+                    <td>copy visual selection</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="paste">
+            <thead>
+                <tr>
+                    <th colspan="2">Paste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>p</td>
+                    <td>paste</td>
+                </tr>
+                <tr>
+                    <td>:r{filename}</td>
+                    <td>paste contents from another file</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="find">
+            <thead>
+                <tr>
+                    <th colspan="2">Find</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/{text} ENTER</td>
+                    <td>Find forward</td>
+                </tr>
+                <tr>
+                    <td>?{text} ENTER</td>
+                    <td>Find backward</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td>repeat search</td>
+                </tr>
+                <tr>
+                    <td>N</td>
+                    <td>repeat search in reverse direction</td>
+                </tr>
+                <tr>
+                    <td>SPC s c</td>
+                    <td>clear highlighted search results</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>find matching paren or bracket</td>
+                </tr>
+            </tbody>
+        </table>
+                </div><!-- col -->
+
+                <div class="col-6">
+        <table id="replace">
+            <thead>
+                <tr>
+                    <th colspan="2">Replace</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>r</td>
+                    <td>overwrite character under cursor</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>overwrite multiple characters</td>
+                </tr>
+                <tr>
+                    <td>:s/{term}/{replacement}[/[g]]</td>
+                    <td>replace first or all matches in sentence</td>
+                </tr>
+                <tr>
+                    <td>:{from},{to}s/{term}/{replacement}</td>
+                    <td>replace all matches between line numbers</td>
+                </tr>
+                <tr>
+                    <td>:%s/{term}/{replacement}</td>
+                    <td>replace all matches in the buffer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="add">
+            <thead>
+                <tr>
+                    <th colspan="2">Add</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a</td>
+                    <td>add after cursor</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>add to end of line</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td>add below line</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>add above line</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="undo-redo">
+            <thead>
+                <tr>
+                    <th colspan="2">Undo/Redo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>u</td>
+                    <td>undo last command</td>
+                </tr>
+                <tr>
+                    <td>CTRL r</td>
+                    <td>redo last command</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="save">
+            <thead>
+                <tr>
+                    <th colspan="2">Save</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>:w</td>
+                    <td>save buffer</td>
+                </tr>
+                <tr>
+                    <td>:w {filename}</td>
+                    <td>save buffer to filename</td>
+                </tr>
+                <tr>
+                    <td>:{from},{to} w {filename}</td>
+                    <td>write portion of buffer to filename</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="windows">
+            <thead>
+                <tr>
+                    <th colspan="2">Windows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SPC {num}</td>
+                    <td>switch to window</td>
+                </tr>
+                <tr>
+                    <td>SPC w w</td>
+                    <td>switch to other window</td>
+                </tr>
+                <tr>
+                    <td>SPC w j</td>
+                    <td>switch to window below</td>
+                </tr>
+                <tr>
+                    <td>SPC w k</td>
+                    <td>switch to window above</td>
+                </tr>
+                <tr>
+                    <td>SPC w . H</td>
+                    <td>move window left</td>
+                </tr>
+                <tr>
+                    <td>SPC w . L</td>
+                    <td>move window right</td>
+                </tr>
+                <tr>
+                    <td>SPC w . J</td>
+                    <td>move window down</td>
+                </tr>
+                <tr>
+                    <td>SPC w . K</td>
+                    <td>move window up</td>
+                </tr>
+                <tr>
+                    <td>SPC w . [</td>
+                    <td>change window width</td>
+                </tr>
+                <tr>
+                    <td>SPC w . ]</td>
+                    <td>change window width</td>
+                </tr>
+                <tr>
+                    <td>SPC w . {</td>
+                    <td>change window height</td>
+                </tr>
+                <tr>
+                    <td>SPC w . }</td>
+                    <td>change window height</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="font">
+            <thead>
+                <tr>
+                    <th colspan="2">Font</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SPC z x +</td>
+                    <td>increase font size</td>
+                </tr>
+                <tr>
+                    <td>SPC z x -</td>
+                    <td>decrease font size</td>
+                </tr>
+                <tr>
+                    <td>SPC z x 0</td>
+                    <td>reset font size</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="shell">
+            <thead>
+                <tr>
+                    <th colspan="2">Shell</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>!{cmd} ENTER</td>
+                    <td>execute shell command</td>
+                </tr>
+                <tr>
+                    <td>SPC '</td>
+                    <td>open shell in new window</td>
+                </tr>
+            </tbody>
+        </table>
+
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+
+
+        <div class="container">
+            <h2>Clojure</h2>
+
+            <div class="row">
+                <div class="col-6">
+
+                    <table class="evaluate">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Evaluate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>, e f</td>
+                                <td>evaluate form</td>
+                            </tr>
+                            <tr>
+                                <td>, e ;</td>
+                                <td>evaluate form, result as comment</td>
+                            </tr>
+                            <tr>
+                                <td>, e b</td>
+                                <td>evaluate buffer</td>
+                            </tr>
+                            <tr>
+                                <td>, e n n</td>
+                                <td>evaluate namespace</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="structural-editing">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Structural Editing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SPC k w</td>
+                                <td>wrap expression</td>
+                            </tr>
+                            <tr>
+                                <td>SPC k s</td>
+                                <td>slurp from right</td>
+                            </tr>
+                            <tr>
+                                <td>SPC k S</td>
+                                <td>slurp from left
+                            </tr>
+                            <tr>
+                                <td>SPC k b</td>
+                                <td>barf to right</td>
+                            </tr>
+                            <tr>
+                                <td>SPC k B</td>
+                                <td>barf to left</td>
+                            </tr>
+                            <tr>
+                                <td>SPC k r</td>
+                                <td>raise</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="refactoring">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Refactoring</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>, r f u</td>
+                                <td>find usages</td>
+                        </tbody>
+                    </table>
+                </div><!-- col -->
+
+                <div class="col-6">
+                    <table class="repl">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Format</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>, = f</td>
+                                <td>format function</td>
+                            </tr>
+                            <tr>
+                                <td>, e b</td>
+                                <td>format buffer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="repl">
+                        <thead>
+                            <tr>
+                                <th colspan="2">REPL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>, '</td>
+                                <td>start a repl</td>
+                            </tr>
+                            <tr>
+                                <td>, s a</td>
+                                <td>switch to repl buffer</td>
+                            </tr>
+                            <tr>
+                                <td>, m b</td>
+                                <td>manage repl connections</td>
+                            </tr>
+                            <tr>
+                                <td>, m i</td>
+                                <td>show repl connection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="documentation">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Documentation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>, h h</td>
+                                <td>read function documentation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- col -->
+            </div><!-- row -->
+
+        </div><!-- container -->
+    </body>
+</html>

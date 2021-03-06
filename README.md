@@ -10,6 +10,10 @@ Open the `spacemacs-cheatsheet.html` file in your web browser to view it.
 My focus at the moment is on the essential keyboard shortcuts needed to accomplish
 common tasks, as well as those for Clojure development.
 
+## Example
+
+![screenshot](https://i.imgur.com/7y0FYKi.png)
+
 ## Contributing
 
 Please fork the repo and submit a pull request for changes you would like made
